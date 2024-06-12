@@ -40,30 +40,30 @@ RabbitMQ docker image
 # Getting Started
 <b>To get started with the Application, follow these steps:
 
-Clone the repository:
+1. Clone the repository:
 git clone https://github.com/IfedayoPeter/AuctionApp
 
-using cmd navigave to project folder and run dotnet build to install the necessary dependencies
+2. using cmd navigave to project folder and run dotnet build to install the necessary dependencies
 
-Restore NuGet packages
+3. Restore NuGet packages
 
-Install wscat:
+4. Install wscat:
 npm install -g wscat
 
-Ensure Microsoft SQL Server is running.
+5. Ensure Microsoft SQL Server is running.
 
-Update the connection string in appsettings.json:
+6. Update the connection string in appsettings.json:
 
  "ConnectionStrings": { "DefaultConnection": "Server=your_server;Database=AuctionAppDb;User Id=your_user;Password=your_password;" } 
 
-Apply migrations
+7. Apply migrations
 
-run your project with visual studio
+8. run your project with visual studio
 
-using cmd, connect to web socket to stream data created in real time:
+9. using cmd, connect to web socket to stream data created in real time:
 wscat -c ws://localhost:7270/ws
 
-Access the application in your web browser:
+10. Access the application in your web browser:
 http://localhost:7270/swagger/index.html<b/>
 
 # Running with Docker 
@@ -146,13 +146,13 @@ DELETE /api/v{version}/user/User/delete_account
 
 <b>Fork the repository.
 
-Create a feature branch (git checkout -b feature/AmazingFeature).
+1. Create a feature branch (git checkout -b feature/AmazingFeature).
 
-Commit your changes (git commit -m 'Add some AmazingFeature').
+2. Commit your changes (git commit -m 'Add some AmazingFeature').
 
-Push to the branch (git push origin feature/AmazingFeature). 
+3. Push to the branch (git push origin feature/AmazingFeature). 
 
-Open a Pull Request. <b/>
+4. Open a Pull Request. <b/>
 
 License Distributed under the MIT License. See LICENSE for more information.
 
