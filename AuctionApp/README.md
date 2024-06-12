@@ -1,128 +1,159 @@
-AuctionApp
-Description
-The online auction market requires an improved communication system to enable effective real-time interactions among users during bidding. The system allows users to enter a bidding room, submit bids, and notify the highest bidder at the end of the auction. Furthermore, it automatically creates an invoice for the highest bidder.
+<h1 align="center">Auction MarketApp</h1>
+<h3 align="center">This is a backend C# application created with .Net8. The application allows users to create account, login, create auctions and place bids.</h3>
 
-Technologies
-.NET 8.0
-Entity Framework
-RabbitMQ
+# Features
+1. Create users
+2. Login users
+3. Manage auctions through CRUD operations (Create, Read, Update, Delete).
+4. Get realtime notifications during bidding process
+5. Utilize MySQL database for data storage.
+6. User authentication using JWT tokens
+7. Swagger for Api documentation
+8. RabbitMQ and websocket for messages
+
+# Technologies Used
+1. C#
+2. .NET 8
+3. Entity Framework
+4. MySQL Database
+5. RabbitMQ
+6. Websocket
+7. JWT auth
+8. Swagger
+9. Docker
+
+# Prerequisites
+Before running the application, make sure you have the following software installed:
+
+.Net 8
+<br/>
+Visual studio
+<br/>
+Mysql server
+<br/>
+Microsoft sql management studio
+<br/>
 Docker
-Microsoft SQL Database
-WebSocket
-Swagger
-API Endpoints
-Auction
-POST /api/v{version}/auction/Auction/create_auction
-GET /api/v{version}/auction/Auction/get_auction_by_code
-GET /api/v{version}/auction/Auction/get_auctions
-GET /api/v{version}/auction/Auction/get_active_auctions
-GET /api/v{version}/auction/Auction/get_auction_results
-GET /api/v{version}/auction/Auction/end_auctions
-GET /api/v{version}/auction/Auction/start_auctions
-PUT /api/v{version}/auction/Auction/update_auction
-Bid
-POST /api/v{version}/bid/Bid/submit_bid
-GET /api/v{version}/bid/Bid/get_bid_by_code
-GET /api/v{version}/bid/Bid/get_bids
-GET /api/v{version}/bid/Bid/get_highest_bids
-PUT /api/v{version}/bid/Bid/update_bid
-BidRoom
-POST /api/v{version}/bidRoom/BidRoom/create_participant
-POST /api/v{version}/bidRoom/BidRoom/create_bidRoom
-GET /api/v{version}/bidRoom/BidRoom/get_bidRoom_by_code
-GET /api/v{version}/bidRoom/BidRoom/get_bidRooms
-GET /api/v{version}/bidRoom/BidRoom/get_active_bidRooms
-GET /api/v{version}/bidRoom/BidRoom/get_active_participants
-POST /api/v{version}/bidRoom/BidRoom/exit_bidRoom
-POST /api/v{version}/bidRoom/BidRoom/enter_bidRoom
-POST /api/v{version}/bidRoom/BidRoom/update_bidRoom
-Login
-POST /UserLogin
-Notification
-GET /api/v{version}/notification/Notification/get_notification_by_user_code
-GET /api/v{version}/notification/Notification/mark_as_read
-User
-POST /api/v{version}/user/User/create_buyer_account
-POST /api/v{version}/user/User/create_seller_account
-GET /api/v{version}/user/User/get_buyers
-GET /api/v{version}/user/User/get_sellers
-GET /api/v{version}/user/User/get_user_by_code
-GET /api/v{version}/user/User/get_user_by_username
-DELETE /api/v{version}/user/User/delete_account
-Setting Up the Project
-Cloning the GitHub Repository
-Clone the repository:
+<br/>
+RabbitMQ docker image
 
-bash
-Copy code
-git clone <repository-url>
-cd AuctionApp
-Open the project in your preferred IDE (e.g., Visual Studio, Visual Studio Code).
+# Getting Started
+<b>To get started with the Application, follow these steps:
 
-Restore NuGet packages:
+1. Clone the repository:
+git clone https://github.com/IfedayoPeter/AuctionApp
 
-bash
-Copy code
-dotnet restore
-Set up the database:
+2. using cmd navigave to project folder and run dotnet build to install the necessary dependencies
 
-Ensure Microsoft SQL Server is running.
+3. Restore NuGet packages
 
-Update the connection string in appsettings.json:
+4. Install wscat:
+npm install -g wscat
 
-json
-Copy code
-"ConnectionStrings": {
-  "DefaultConnection": "Server=your_server;Database=AuctionAppDb;User Id=your_user;Password=your_password;"
-}
-Apply migrations:
+5. Ensure Microsoft SQL Server is running.
 
-bash
-Copy code
-dotnet ef database update
-Run the project:
+6. Update the connection string in appsettings.json:
 
-bash
-Copy code
-dotnet run
-The application should be running at https://localhost:7270.
+ "ConnectionStrings": { "DefaultConnection": "Server=your_server;Database=AuctionAppDb;User Id=your_user;Password=your_password;" } 
 
-Running with Docker
-Ensure Docker is installed and running on your machine.
+7. Apply migrations
 
-Build the Docker image:
+8. run your project with visual studio
 
-bash
-Copy code
-docker build -t auctionapp .
-Run the Docker container:
-
-bash
-Copy code
-docker run -d -p 7270:80 --name auctionapp-container auctionapp
-The application should be running at http://localhost:7270.
-
-Swagger
-To access the Swagger UI for API documentation, navigate to https://localhost:7270/swagger.
-
-WebSocket
-To connect to the WebSocket server, use a WebSocket client (e.g., wscat):
-
-bash
-Copy code
+9. using cmd, connect to web socket to stream data created in real time:
 wscat -c ws://localhost:7270/ws
-Docker Image Repository
-The Docker image for this project can be pulled from the provided Docker image repository link.
 
-Contributing
-Fork the repository.
-Create a feature branch (git checkout -b feature/AmazingFeature).
-Commit your changes (git commit -m 'Add some AmazingFeature').
-Push to the branch (git push origin feature/AmazingFeature).
-Open a Pull Request.
-License
-Distributed under the MIT License. See LICENSE for more information.
+10. Access the application in your web browser:
+http://localhost:7270/swagger/index.html<b/>
 
-Contact
-Email - awoniyiifedayopeter@gmail.com
+# Running with Docker 
 
+<h3>Ensure Docker is installed and running on your machine.<h3/>
+
+<h3>Build the Docker image<h3/>
+
+
+# Configuration
+The application uses the default configuration provided by .Net. However, if you need to modify any settings, you can do so in the application.json file located in the root folder of the project.
+
+# API Endpoints
+The following API endpoints are available for interacting with the application:
+<br>
+POST /api/v{version}/auction/Auction/create_auction 
+<br/>
+GET /api/v{version}/auction/Auction/get_auction_by_code 
+<br/>
+GET /api/v{version}/auction/Auction/get_auctions 
+<br/>
+GET /api/v{version}/auction/Auction/get_active_auctions 
+<br/>
+GET /api/v{version}/auction/Auction/get_auction_results 
+<br/>
+GET /api/v{version}/auction/Auction/end_auctions 
+<br/>
+GET /api/v{version}/auction/Auction/start_auctions 
+<br/>
+PUT /api/v{version}/auction/Auction/update_auction Bid 
+<br/>
+POST /api/v{version}/bid/Bid/submit_bid 
+<br/>
+GET /api/v{version}/bid/Bid/get_bid_by_code 
+<br/>
+GET /api/v{version}/bid/Bid/get_bids 
+<br/>
+GET /api/v{version}/bid/Bid/get_highest_bids 
+<br/>
+PUT /api/v{version}/bid/Bid/update_bid BidRoom 
+<br/>
+POST /api/v{version}/bidRoom/BidRoom/create_participant 
+<br/>
+POST /api/v{version}/bidRoom/BidRoom/create_bidRoom 
+<br/>
+GET /api/v{version}/bidRoom/BidRoom/get_bidRoom_by_code 
+<br/>
+GET /api/v{version}/bidRoom/BidRoom/get_bidRooms 
+<br/>
+GET /api/v{version}/bidRoom/BidRoom/get_active_bidRooms 
+<br/>
+GET /api/v{version}/bidRoom/BidRoom/get_active_participants 
+<br/>
+POST /api/v{version}/bidRoom/BidRoom/exit_bidRoom 
+<br/>
+POST /api/v{version}/bidRoom/BidRoom/enter_bidRoom 
+<br/>
+POST /api/v{version}/bidRoom/BidRoom/update_bidRoom Login 
+<br/>
+POST /UserLogin Notification 
+<br/>
+GET /api/v{version}/notification/Notification/get_notification_by_user_code 
+<br/>
+GET /api/v{version}/notification/Notification/mark_as_read User
+<br/>
+POST /api/v{version}/user/User/create_buyer_account 
+<br/>
+POST /api/v{version}/user/User/create_seller_account 
+<br/>
+GET /api/v{version}/user/User/get_buyers GET /api/v{version}/user/User/get_sellers 
+<br/>
+GET /api/v{version}/user/User/get_user_by_code 
+<br/>
+GET /api/v{version}/user/User/get_user_by_username 
+<br/>
+DELETE /api/v{version}/user/User/delete_account 
+
+
+# Contributing 
+
+<b>Fork the repository.
+
+1. Create a feature branch (git checkout -b feature/AmazingFeature).
+
+2. Commit your changes (git commit -m 'Add some AmazingFeature').
+
+3. Push to the branch (git push origin feature/AmazingFeature). 
+
+4. Open a Pull Request. <b/>
+
+License Distributed under the MIT License. See LICENSE for more information.
+
+Contact Email - awoniyiifedayopeter@gmail.com
