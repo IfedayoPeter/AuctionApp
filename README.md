@@ -1,5 +1,5 @@
 <h1 align="center">Auction MarketApp</h1>
-<h3 align="center">This is a backend C# application created with .Net8. The application allows users to create account, login, create auctions and palce bids.</h3>
+<h3 align="center">This is a backend C# application created with .Net8. The application allows users to create account, login, create auctions and place bids.</h3>
 
 # Features
 1. Create users
@@ -38,7 +38,7 @@ Docker
 RabbitMQ docker image
 
 # Getting Started
-<h3>To get started with the Application, follow these steps:
+<b>To get started with the Application, follow these steps:
 
 Clone the repository:
 git clone https://github.com/IfedayoPeter/AuctionApp
@@ -64,7 +64,7 @@ using cmd, connect to web socket to stream data created in real time:
 wscat -c ws://localhost:7270/ws
 
 Access the application in your web browser:
-http://localhost:7270/swagger/index.html<h3/>
+http://localhost:7270/swagger/index.html<b/>
 
 # Running with Docker 
 
@@ -144,11 +144,15 @@ DELETE /api/v{version}/user/User/delete_account
 
 # Contributing 
 
-<h3>Fork the repository. 
-Create a feature branch (git checkout -b feature/AmazingFeature). 
-Commit your changes (git commit -m 'Add some AmazingFeature'). 
+<b>Fork the repository.
+
+Create a feature branch (git checkout -b feature/AmazingFeature).
+
+Commit your changes (git commit -m 'Add some AmazingFeature').
+
 Push to the branch (git push origin feature/AmazingFeature). 
-Open a Pull Request. <h3/>
+
+Open a Pull Request. <b/>
 
 License Distributed under the MIT License. See LICENSE for more information.
 
