@@ -68,9 +68,22 @@ http://localhost:7270/swagger/index.html<b/>
 
 # Running with Docker 
 
-<h3>Ensure Docker is installed and running on your machine.<h3/>
+<b>Ensure Docker is installed and running on your machine.<b/>
 
-<h3>Build the Docker image<h3/>
+<b>Build the Docker image<b/>
+# Or
+
+# Log in to Docker Hub (if the repository is private)
+docker login
+
+# Pull the Docker image
+docker pull auctionapp:latest
+
+# Verify the pulled image
+docker images
+
+# Run the pulled image in a container
+docker run --name my-container -d -p host_port:container_port auctionapp:latest
 
 
 # Configuration
