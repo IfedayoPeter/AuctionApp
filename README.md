@@ -58,12 +58,20 @@ RabbitMQ docker image
 
 7. Apply migrations
 
-8. run your project with visual studio
+8. Run the below command to download and run the rabbitmq docker image. Docker has to be running first.
+   
+latest RabbitMQ 3.13 - 
+*docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13-management*
 
-9. using cmd, connect to web socket to stream data created in real time:
+10. Ensure that RabbitMQ server is running or rabbitmq docker image is running and you have loggedin before runnung the project, else the project won't run if it fails to connect
+   to rabbliMQ server. This also have to be ensured if you are running auctionapp docker image
+
+11. run your project with visual studio
+
+12. using cmd, connect to web socket to stream data created in real time:
  *wscat -c ws://localhost:7270/ws*
 
-10. Access the application in your web browser:
+13. Access the application in your web browser:
 *http://localhost:7270/swagger/index.html<b/>*
 
 # Running with Docker 
