@@ -41,47 +41,52 @@ RabbitMQ docker image
 <b>To get started with the Application, follow these steps:
 
 1. Clone the repository:
-git clone https://github.com/IfedayoPeter/AuctionApp
+*git clone https://github.com/IfedayoPeter/AuctionApp*
 
 2. using cmd navigave to project folder and run dotnet build to install the necessary dependencies
 
 3. Restore NuGet packages
 
 4. Install wscat:
-npm install -g wscat
+ *npm install -g wscat*
 
 5. Ensure Microsoft SQL Server is running.
 
 6. Update the connection string in appsettings.json:
 
- "ConnectionStrings": { "DefaultConnection": "Server=your_server;Database=AuctionAppDb;User Id=your_user;Password=your_password;" } 
+ *"ConnectionStrings": { "DefaultConnection": "Server=your_server;Database=AuctionAppDb;User Id=your_user;Password=your_password;" }* 
 
 7. Apply migrations
 
 8. run your project with visual studio
 
 9. using cmd, connect to web socket to stream data created in real time:
-wscat -c ws://localhost:7270/ws
+ *wscat -c ws://localhost:7270/ws*
 
 10. Access the application in your web browser:
-http://localhost:7270/swagger/index.html<b/>
+*http://localhost:7270/swagger/index.html<b/>*
 
 # Running with Docker 
 
-<b>Ensure Docker is installed and running on your machine.<b/>
+1. <b>Ensure Docker is installed and running on your machine.<b/>
 
-<b>Build the Docker image<b/>
+2. <b>Build the Docker image<b/>
 
-# Or
+**Or**
 
-<b>Pull the Docker image<b/>
-docker pull auctionapp:latest
 
-<b>Verify the pulled image<b/>
-docker images
+3. **Pull the Docker image**
 
-<b>Run the pulled image in a container<b/>
-docker run --name my-container -d -p host_port:container_port auctionapp:latest
+*docker pull auctionapp:latest*
+
+4. **Verify the pulled image**
+
+*docker images*
+
+5. **Run the pulled image in a container**
+
+*docker run --name my-container -d -p host_port:container_port auctionapp:latest*
+
 
 
 # Configuration
