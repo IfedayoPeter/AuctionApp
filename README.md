@@ -69,7 +69,7 @@ latest RabbitMQ 3.13 -
 11. run your project with visual studio
 
 12. using cmd, connect to web socket to stream data created in real time:
- *wscat -c ws://localhost:7270/ws*
+ *wscat -c ws://localhost:5259/ws*
 
 13. Access the application in your web browser:
 *http://localhost:7270/swagger/index.html<b/>*
